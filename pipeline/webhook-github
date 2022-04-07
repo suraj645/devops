@@ -3,7 +3,7 @@
     stages {
         stage('PULL') { 
             steps {
-                git 'https://gitlab.com/surajdk776/devops.git'
+                git 'https://github.com/suraj645/devops.git'
             }
         }
         stage('Build') { 
