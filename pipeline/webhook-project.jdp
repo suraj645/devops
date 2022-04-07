@@ -1,9 +1,9 @@
- pipeline {
+  pipeline {
     agent any 
     stages {
         stage('PULL') { 
             steps {
-                git 'https://github.com/suraj645/devops.git'
+                git 'https://gitlab.com/surajdk776/devops.git'
             }
         }
         stage('Build') { 
