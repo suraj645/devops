@@ -1,0 +1,27 @@
+pipeline {
+    agent any 
+    stages {
+        stage('PULL') { 
+            steps {
+                git 'https://github.com/suraj645/devops.git'
+            }
+        }
+        stage('Build') { 
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('Test') { 
+            steps {
+                withsonarQubeEnv('sonar'){
+                    sh 'mvn sonar:sonar'
+                }
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                echo 'PIPELINE DEPLOY SUCCESSFULLY'
+            }
+        }
+    }
+}
